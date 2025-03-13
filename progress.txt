@@ -1,0 +1,19 @@
+importing express (app.js) done 
+server.js done
+creating dotenv file , done!
+setting up controllers, routes,models
+added database
+creating document , getting all documents.
+saved all data at database 
+
+remaining tasks :-
+0. get all hotels  -done
+1. get one hotel (by id) -done
+2. create an hotel -done
+3. update hotels details ( by id) -done
+4. delete a hotel (by id) -done
+
+// implement sorting by :-
+1. rooms_available ( most to least) -done
+2. ratings -done
+3. price -done
