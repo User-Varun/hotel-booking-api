@@ -1,5 +1,7 @@
 const express = require("express");
 
+const errorController = require("./controllers/errorController");
+
 const app = express();
 const hotelsRouter = require("./routes/hotelsRoutes");
 const AppError = require("./utills/appError");
@@ -36,15 +38,7 @@ app.all(/(.*)/, (req, res, next) => {
   // next(err);
 });
 
-// Global Error Handling
-app.use((err, req, res, next) => {
-  err.statusCode = err.statusCode || 500;
-  err.status = err.status || "error";
-
-  res.status(err.statusCode).json({
-    status: err.status,
-    message: err.message
-  });
-});
+// Global Error Handling middleware
+app.use(errorController);
 
 module.exports = app;

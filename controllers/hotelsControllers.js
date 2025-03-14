@@ -44,7 +44,10 @@ module.exports.updateHotel = catchAsync(async (req, res, next) => {
   const { id } = req.params;
   const dataToUpdate = req.body;
 
-  const hotel = await Hotel.findByIdAndUpdate(id, dataToUpdate);
+  const hotel = await Hotel.findByIdAndUpdate(id, dataToUpdate, {
+    new: true,
+    runValidators: true
+  });
 
   if (!hotel) {
     return next(
